@@ -59,10 +59,7 @@ public class DoblesTest {
         //uno de los jugadores gana o hay empate
 	
 	}
-	//Caso que gana el jugador1
-	@Test 
-	public void pruebaGanaJugador1() {
-		
+	private void jugadorGana1() {
 		juego.mark(0);
 		verify(conexion1).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador2);
 		verify(conexion2).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador2);
@@ -87,27 +84,9 @@ public class DoblesTest {
 		reset(conexion2);
 		
 		juego.mark(2);
-		//verify(conexion1).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador1);
-		//verify(conexion2).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador1);
-		
-		//Recuperamos los valores pasados como parametros
-		ArgumentCaptor<WinnerValue> argument =	ArgumentCaptor.forClass(WinnerValue.class);		
-		
-		//El juego acaba
-        verify(conexion1).sendEvent(eq(EventType.GAME_OVER), argument.capture());
-
-        WinnerValue event = argument.getValue();
-        
-		int var[] = {0,1,2};
-        assertArrayEquals("Las celdas ganadoras deberian ser 0,1,2", event.pos, var);
-        
-		assertEquals("El jugador 1 deberia haber ganado "+jugador1.getName(), event.player.getId(), jugador1.getId());
 	}
-	
-	//Caso en eque gana el jugador 2
-	@Test
-	public void pruebaGanaJugador2() {
-		
+
+	private void jugadorGana2() {
 		juego.mark(4);
 		verify(conexion1).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador2);
 		verify(conexion2).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador2);
@@ -138,24 +117,9 @@ public class DoblesTest {
 		reset(conexion2);
 		
 		juego.mark(2);
-		
-		ArgumentCaptor<WinnerValue> argument =	ArgumentCaptor.forClass(WinnerValue.class);		
-		
-		//El juego acaba
-        verify(conexion1).sendEvent(eq(EventType.GAME_OVER), argument.capture());
-
-        WinnerValue event = argument.getValue();
-        
-		int var[] = {0,1,2};
-        assertArrayEquals("Las celdas ganadoras deberian ser 0,1,2", event.pos, var);
-        
-		assertEquals("El jugador 2 deberia haber ganado "+jugador2.getName(), event.player.getId(), jugador2.getId());
 	}
 
-	
-	//Caso empate
-	@Test
-	public void pruebaEmpate() {
+	private void juegoEmpate() {
 		juego.mark(1);
 		verify(conexion1).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador2);
 		verify(conexion2).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador2);
@@ -202,6 +166,54 @@ public class DoblesTest {
 		
 		juego.mark(5);
 
+	}
+	//Caso que gana el jugador1
+	@Test 
+	public void pruebaGanaJugador1() {
+		jugadorGana1();
+		
+		//verify(conexion1).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador1);
+		//verify(conexion2).sendEvent(TicTacToeGame.EventType.SET_TURN, jugador1);
+		
+		//Recuperamos los valores pasados como parametros
+		ArgumentCaptor<WinnerValue> argument =	ArgumentCaptor.forClass(WinnerValue.class);		
+		
+		//El juego acaba
+        verify(conexion1).sendEvent(eq(EventType.GAME_OVER), argument.capture());
+
+        WinnerValue event = argument.getValue();
+        
+		int var[] = {0,1,2};
+        assertArrayEquals("Las celdas ganadoras deberian ser 0,1,2", event.pos, var);
+        
+		assertEquals("El jugador 1 deberia haber ganado "+jugador1.getName(), event.player.getId(), jugador1.getId());
+	}
+	
+	//Caso en eque gana el jugador 2
+	@Test
+	public void pruebaGanaJugador2() {
+		
+		jugadorGana2();
+		
+		ArgumentCaptor<WinnerValue> argument =	ArgumentCaptor.forClass(WinnerValue.class);		
+		
+		//El juego acaba
+        verify(conexion1).sendEvent(eq(EventType.GAME_OVER), argument.capture());
+
+        WinnerValue event = argument.getValue();
+        
+		int var[] = {0,1,2};
+        assertArrayEquals("Las celdas ganadoras deberian ser 0,1,2", event.pos, var);
+        
+		assertEquals("El jugador 2 deberia haber ganado "+jugador2.getName(), event.player.getId(), jugador2.getId());
+	}
+
+	
+	//Caso empate
+	@Test
+	public void pruebaEmpate() {
+		juegoEmpate();
+		
 		ArgumentCaptor<WinnerValue> argument =	ArgumentCaptor.forClass(WinnerValue.class);
         verify(conexion1).sendEvent(eq(EventType.GAME_OVER), argument.capture());
 

@@ -58,27 +58,7 @@ public class SistemaTest {
 
 
 	}
-	//Probamos que la creacion de dos jugadores. 
-	@Test
-	public void pruebaLogin() {
-		login("josep", driver1);
-		login("Mary", driver2);
-		
-	    String aux1 = driver1.findElement(By.id("p1Score")).getText();
-	    String aux2 = driver1.findElement(By.id("p2Score")).getText();
-	    String aux3 = driver2.findElement(By.id("p1Score")).getText();
-	    String aux4 = driver2.findElement(By.id("p2Score")).getText();
-
-	    //System.out.println(""+ aux + aux2);
-		assertEquals("El nombre en el driver1 del jug1 deberia ser X josep", "X josep", aux1);
-		assertEquals("El nombre en el driver1 del jug2 deberia ser Mary O", "Mary O", aux2);
-		assertEquals("El nombre en el driver2 del jug1 deberia ser X josep", "X josep", aux3);
-		assertEquals("El nombre en el driver2 del jug2 deberia ser Mary O", "Mary O", aux4);
-
-	}
-	
-	@Test
-	public void pruebaGanaJugador1() {
+	private void JuegoGana1() {
 		login("josep", driver1);
 		login("Mary", driver2);
 		
@@ -97,20 +77,8 @@ public class SistemaTest {
         driver1.findElement(By.id("cell-2")).click();
         //wait2.until(ExpectedConditions.textToBePresentInElementLocated(By.id("cell-2"), "X"));
 
-        wait1.until(ExpectedConditions.alertIsPresent());
-        wait2.until(ExpectedConditions.alertIsPresent());
-
-
-        String aux1 = driver1.switchTo().alert().getText();
-        String aux2 = driver2.switchTo().alert().getText();
-        
-        assertEquals("DRIVER1:El ganador deberia ser josep", aux1, "josep wins! Mary looses.");
-        assertEquals("Driver2:El ganador deberia ser josep", aux2, "josep wins! Mary looses.");
-
 	}
-
-	@Test 
-	public void pruebaGanaJugador2() {
+	private void juegoGana2() {
 		login("josep", driver1);
 		login("Mary", driver2);
 		
@@ -131,21 +99,8 @@ public class SistemaTest {
         
         driver2.findElement(By.id("cell-2")).click();
         //wait1.until(ExpectedConditions.textToBePresentInElementLocated(By.id("cell-2"), "O"));
-        
-        wait1.until(ExpectedConditions.alertIsPresent());
-        wait2.until(ExpectedConditions.alertIsPresent());
-
-
-        String aux1 = driver1.switchTo().alert().getText();
-        String aux2 = driver2.switchTo().alert().getText();
-        
-        assertEquals("DRIVER1: El ganador deberia ser Mary", aux1, "Mary wins! josep looses.");
-        assertEquals("DRIVER2: El ganador deberia ser Mary", aux2, "Mary wins! josep looses.");
-
 	}
-
-	@Test 
-	public void pruebaEmpate() {
+	private void juegoEmpata() {
 		login("josep", driver1);
 		login("Mary", driver2);
 		
@@ -177,6 +132,60 @@ public class SistemaTest {
         
         driver1.findElement(By.id("cell-5")).click();
 
+	}
+	//Probamos que la creacion de dos jugadores. 
+	@Test
+	public void pruebaLogin() {
+		login("josep", driver1);
+		login("Mary", driver2);
+		
+	    String aux1 = driver1.findElement(By.id("p1Score")).getText();
+	    String aux2 = driver1.findElement(By.id("p2Score")).getText();
+	    String aux3 = driver2.findElement(By.id("p1Score")).getText();
+	    String aux4 = driver2.findElement(By.id("p2Score")).getText();
+
+	    //System.out.println(""+ aux + aux2);
+		assertEquals("El nombre en el driver1 del jug1 deberia ser X josep", "X josep", aux1);
+		assertEquals("El nombre en el driver1 del jug2 deberia ser Mary O", "Mary O", aux2);
+		assertEquals("El nombre en el driver2 del jug1 deberia ser X josep", "X josep", aux3);
+		assertEquals("El nombre en el driver2 del jug2 deberia ser Mary O", "Mary O", aux4);
+
+	}
+	
+	@Test
+	public void pruebaGanaJugador1() {
+		JuegoGana1();
+        wait1.until(ExpectedConditions.alertIsPresent());
+        wait2.until(ExpectedConditions.alertIsPresent());
+
+
+        String aux1 = driver1.switchTo().alert().getText();
+        String aux2 = driver2.switchTo().alert().getText();
+        
+        assertEquals("DRIVER1:El ganador deberia ser josep", aux1, "josep wins! Mary looses.");
+        assertEquals("Driver2:El ganador deberia ser josep", aux2, "josep wins! Mary looses.");
+
+	}
+
+	@Test 
+	public void pruebaGanaJugador2() {
+		juegoGana2();
+        wait1.until(ExpectedConditions.alertIsPresent());
+        wait2.until(ExpectedConditions.alertIsPresent());
+
+
+        String aux1 = driver1.switchTo().alert().getText();
+        String aux2 = driver2.switchTo().alert().getText();
+        
+        assertEquals("DRIVER1: El ganador deberia ser Mary", aux1, "Mary wins! josep looses.");
+        assertEquals("DRIVER2: El ganador deberia ser Mary", aux2, "Mary wins! josep looses.");
+
+	}
+
+	@Test 
+	public void pruebaEmpate() {
+		juegoEmpata();
+		
         wait1.until(ExpectedConditions.alertIsPresent());
         wait2.until(ExpectedConditions.alertIsPresent());
 

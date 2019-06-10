@@ -47,6 +47,15 @@ public class BoardTest {
 		asignarCelda("O",6);
 		asignarCelda("X",2);
 	}
+	private void tableroGanador2() {
+		asignarCelda("X",3);
+		asignarCelda("O",0);
+		asignarCelda("X",7);
+		asignarCelda("O",1);
+		asignarCelda("X",5);
+		asignarCelda("O",2);
+
+	}
 	//Test de empate
 	@Test
 	public void pruebaCheckEmpate(){
@@ -63,7 +72,12 @@ public class BoardTest {
 		tableroGanador();
 		assertEquals("El tablero esta ganado por alguien", tablero.checkDraw(), false);
 	}
-	
+	@Test
+	public void pruebaCheckGana2() {
+
+		tableroGanador2();
+		assertEquals("El tablero esta ganado por alguien", tablero.checkDraw(), false);
+	}
 	//Comprueba que la linea que extrae es la correcta
 	@Test
 	public void pruebaCellsIfWinnerGanador() {
@@ -75,7 +89,16 @@ public class BoardTest {
 
 		
 	}
-	
+	@Test
+	public void pruebaCellsIfWinnerGanador2() {
+		tableroGanador2();
+		int var[] = {0,1,2};
+		
+		//assertTrue("El tablero ha detectado la fila ganadora", Arrays.equals(tablero.getCellsIfWinner("X"), var));
+		assertArrayEquals("El tablero ha detectado la fila ganadora", tablero.getCellsIfWinner("O"), var);
+
+		
+	}
 	//Comprueba que si no hay ninguna linea ganadora, devuelve un null
 	@Test
 	public void pruebaCellsIfWinnerNOGanador() {
@@ -83,4 +106,5 @@ public class BoardTest {
 
 		assertEquals("NO hay ningun ganador, el resultado es null", tablero.getCellsIfWinner("X"), null);
 	}
+	
 }
