@@ -1,0 +1,384 @@
+Started by user pavlo
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /home/pavlo/.jenkins/workspace/prueba2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Preparation)
+[Pipeline] sh
++ cp -r /home/pavlo/AIS/p.lopezpar.zip ./
+[Pipeline] sh
++ unzip -u p.lopezpar.zip
+Archive:  p.lopezpar.zip
+[Pipeline] tool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ /home/pavlo/.jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn -Dmaven.test.failure.ignore clean package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< es.codeurjc.ais:p.lopezpar >---------------------
+[INFO] Building Tic-Tac-Toe 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ p.lopezpar ---
+[INFO] Deleting /home/pavlo/.jenkins/workspace/prueba2/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ p.lopezpar ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ p.lopezpar ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/pavlo/.jenkins/workspace/prueba2/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ p.lopezpar ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/pavlo/.jenkins/workspace/prueba2/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ p.lopezpar ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/pavlo/.jenkins/workspace/prueba2/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ p.lopezpar ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running es.codeurjc.ais.tictactoe.BoardTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s - in es.codeurjc.ais.tictactoe.BoardTest
+[INFO] Running es.codeurjc.ais.tictactoe.DoblesTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.261 s - in es.codeurjc.ais.tictactoe.DoblesTest
+[INFO] Running es.codeurjc.ais.tictactoe.SistemaTest
+22:17:01.579 [main] DEBUG io.github.bonigarcia.wdm.Preferences - Removing preference chrome75=75.0.3770.90 (expired on 2019-06-15 17:44:28)
+22:17:01.585 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager - Driver for chrome75 not found in local properties
+22:17:01.602 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+22:17:01.607 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+22:17:01.610 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://raw.githubusercontent.com:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+22:17:01.622 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://raw.githubusercontent.com:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+22:17:01.623 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://raw.githubusercontent.com:443
+22:17:01.664 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to raw.githubusercontent.com/151.101.132.133:443
+22:17:01.664 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to raw.githubusercontent.com/151.101.132.133:443 with timeout 0
+22:17:01.728 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: [TLSv1.3, TLSv1.2, TLSv1.1, TLSv1]
+22:17:01.728 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+22:17:01.729 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+22:17:01.884 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Secure session established
+22:17:01.884 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+22:17:01.884 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+22:17:01.890 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  peer principal: CN=www.github.com, O="GitHub, Inc.", L=San Francisco, ST=California, C=US
+22:17:01.892 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  peer alternative names: [www.github.com, *.github.com, github.com, *.github.io, github.io, *.githubusercontent.com, githubusercontent.com]
+22:17:01.893 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  issuer principal: CN=DigiCert SHA2 High Assurance Server CA, OU=www.digicert.com, O=DigiCert Inc, C=US
+22:17:01.894 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 10.0.2.15:48722<->151.101.132.133:443
+22:17:01.894 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 30000
+22:17:01.894 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /bonigarcia/webdrivermanager/master/src/main/resources/versions.properties HTTP/1.1
+22:17:01.895 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+22:17:01.896 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+22:17:01.898 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> GET /bonigarcia/webdrivermanager/master/src/main/resources/versions.properties HTTP/1.1
+22:17:01.898 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Mozilla/5.0
+22:17:01.898 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: keep-alive
+22:17:01.899 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: raw.githubusercontent.com
+22:17:01.899 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+22:17:01.899 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "GET /bonigarcia/webdrivermanager/master/src/main/resources/versions.properties HTTP/1.1[\r][\n]"
+22:17:01.899 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Mozilla/5.0[\r][\n]"
+22:17:01.899 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+22:17:01.899 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: raw.githubusercontent.com[\r][\n]"
+22:17:01.899 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+22:17:01.899 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+22:17:01.920 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+22:17:01.921 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox[\r][\n]"
+22:17:01.922 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Strict-Transport-Security: max-age=31536000[\r][\n]"
+22:17:01.922 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+22:17:01.923 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Frame-Options: deny[\r][\n]"
+22:17:01.923 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-XSS-Protection: 1; mode=block[\r][\n]"
+22:17:01.924 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "ETag: "72c9e2ab4e4d241059795e2d99ac1b96744a22a2"[\r][\n]"
+22:17:01.925 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+22:17:01.925 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Cache-Control: max-age=300[\r][\n]"
+22:17:01.926 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Geo-Block-List:[\r][\n]"
+22:17:01.926 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-GitHub-Request-Id: B89E:05A8:507FF4:5D7905:5D06A2E1[\r][\n]"
+22:17:01.927 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+22:17:01.927 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 595[\r][\n]"
+22:17:01.928 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Accept-Ranges: bytes[\r][\n]"
+22:17:01.929 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Sun, 16 Jun 2019 20:17:01 GMT[\r][\n]"
+22:17:01.930 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Via: 1.1 varnish[\r][\n]"
+22:17:01.930 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+22:17:01.931 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Served-By: cache-mad22048-MAD[\r][\n]"
+22:17:01.931 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Cache: HIT[\r][\n]"
+22:17:01.932 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Cache-Hits: 1[\r][\n]"
+22:17:01.932 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Timer: S1560716222.904729,VS0,VE0[\r][\n]"
+22:17:01.932 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Authorization,Accept-Encoding[\r][\n]"
+22:17:01.932 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
+22:17:01.932 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Fastly-Request-ID: 984e374dac0475c4812b31a7085e252310f281ec[\r][\n]"
+22:17:01.932 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Expires: Sun, 16 Jun 2019 20:22:01 GMT[\r][\n]"
+22:17:01.933 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Source-Age: 220[\r][\n]"
+22:17:01.933 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+22:17:01.933 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x3][0x8d][0x94][0xcb][0xae][0x9b]0[0x10]@[0xf7][0xf9][\n]"
+22:17:01.935 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Kw[0xd3].b[0xfc][0xc2]@$6}[0xae][0xaa].[0xda]}E[0xc0]I[0xac][0x10][0x1c][0xd9][0xe4][0xa6][0xed][0xd7][0xd7][0xe3][0x7]"Q+uy[0xe][0xf6][0xcc]x<[0xf8][0x5]}?i[0x87][0xe]zT[0xa8]7[0xd3][0xdc][0xe9][0xc9][0xa1][0xf9][0xa4][0xd0]y2[0xf7][0x9][0xbd]*[0xeb][0xb4][0xf1][0xea]`,[0x1a][0xac][0x6]Fo[0xf6]z[0xea][0xec][0xaf][0xb7]~[0xc3][0xe5][0xda][0xcd]z[0xef][0xf7][0xde][0xf5]|[\n]"
+22:17:01.938 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[0xfb]zc[0xad]rW3[\r]z:[0xa2][0xbd]5w[0xa7]l[0x8e][0xb3][0xd9][0xbc][0xa0]wQ[0xed][0xd0]gc[0x8e]~[0xe7][0xfb][0x93]5[0x17][0x85][0xb6][0xe8]C[0x8][0xbf]C}[0x10]1[0x99]_[0xff][0xcd][0xdc]l[0xaf]v[0xe8]4[0xcf][0xd7]]Q[0xac][0xbf][0xe2][0x0][0xfa]v[0xc1][0xc6][0x1e][0x8b][0xc1][0x17]<[0x9a]np[0x9b][0xb8][0xa6][0x92]m%1[0xc1][0xbc]&[\r]fe[0xb6]e[[0x95]`[0xab][0x8a][0xe0][0x86]d+[0xda]J[0x4][0xcb][0x1a],[0xb3][0xe4]m[0xc5]A[0xca][0x9a]cYg[0xcb]Z[0x86][0xc5][0xb2][0x86]>[0x10][0x1][0xca][0xa9]d[0x3]$2[0xd5]@,S[0x5]D3I[0xa0]\[0x8c],=[0xf1][0x9c]O[\n]"
+22:17:01.938 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[0xa0]*[0x13][0x7][0xca][0xf9]$[0xd4][0xc2][0x97]|P[0xb]_[0xf2]A-[0x9c]?[0xb4][0xfc][0x8b][0xf9][0xad][0xc7][0xb1]C[0x9f][0xb4]U[0x7][0xf3]s[0xd5][0xf4][0xa3][0xea][0xcf][0xe6][0xaf]=w[0xbe][0xe9]G[0xbb][0xb7]=[0xf6][0xf7]]\b[0x88]b[0xb5][0xa1][0xb0]jT[0x9d]Sns[0x88]q[0xfd][0x1][0x8]f[0xbe][0x9f][0x8b][0x10] [0xf8]J[0xf0]g[0xc1]@[0xb0][0x95][0xa0] [0xe8]J[0x90]'Q6[0xcf][0xa2]~[0x16][0xd5][0xb3][0x90] [0xc8]J[0x94]Y[0xac][0xdb][0xf4][0xf5][0xaa]l[0xb7]j[0x8e][0x1][0xfe][0x9f][0xe6][0x84][0x85][0xce][0x1c][0xe6]{gU[0xa4]<[0xa2][0xcf][0xad][\n]"
+22:17:01.939 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[0x1f]e[0x9a][0x97][0x0]e[0xb3][0x86]4-[0x11][0xd2][0xb0]DH[0xb3][0x12]![0x8d]J[0x84]4)[0x11][0xd2][0xa0]DHs[0x12][0x81][0xc6][0xc1][0x88]@V [0xa0][0x2][0x9e][0x92][\n]"
+22:17:01.940 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[0xa8][0x80][0xa7]<[0x2]*`M[0x2][0x19][0xe1]a[0xb2]to[\r][0x9c][0x1c]}[0x1c][0x8e][0xeb][0xbf][0xf9][0xe2][0x94][0x17][0xff]l[0xde][0xa0]^[0xd5][0x8]Q[0xf1]%G[0x8][0x9d]T[0xd3][0xf6][0xe6][0x8a][0xc5]m!H1[0x1b]3[0xba][0xe2][0xae][0xf6][0xa9][0x99]h[0xbb]][0x2][0xa9][0x9][0xdf][0xf5]Y_[0xd5][0xa0][0xbb][0xf0][0x1c][0x0][0x15]KY?[0xa0][0xac][\r]D[0xc9][0xcf][0x2][0x95][0xb5][0xbf][0xf6]`[0xd2][0x93]@y[0x95][0x8c][0x10][0xed][0xd5][0xaa][0xad][0xb][0xe7]n[0x1c][0xd5][0x10]%k%[0xa6][0x15][0xf5]X@[0xda][0x96]>[0x8]k[0x9a][0x88][0xa4][0x15][0x98][0x96]D[0xf2][0x80][0xbc]n9[0xa6][0x82]7[0x11][0x19][0xdc][0x13]%e-#[0x92][0x96]zd[0xfe][0x1a][0xff][0x0]s[0xfe][0xb8][0xd1][0x81][0x5][0x0][0x0]"
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Strict-Transport-Security: max-age=31536000
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Frame-Options: deny
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-XSS-Protection: 1; mode=block
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << ETag: "72c9e2ab4e4d241059795e2d99ac1b96744a22a2"
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: text/plain; charset=utf-8
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Cache-Control: max-age=300
+22:17:01.943 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Geo-Block-List:
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-GitHub-Request-Id: B89E:05A8:507FF4:5D7905:5D06A2E1
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Encoding: gzip
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 595
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Accept-Ranges: bytes
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Sun, 16 Jun 2019 20:17:01 GMT
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Via: 1.1 varnish
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Served-By: cache-mad22048-MAD
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Cache: HIT
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Cache-Hits: 1
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Timer: S1560716222.904729,VS0,VE0
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Authorization,Accept-Encoding
+22:17:01.944 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Access-Control-Allow-Origin: *
+22:17:01.945 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Fastly-Request-ID: 984e374dac0475c4812b31a7085e252310f281ec
+22:17:01.945 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Expires: Sun, 16 Jun 2019 20:22:01 GMT
+22:17:01.945 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Source-Age: 220
+22:17:01.948 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+22:17:01.954 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {s}->https://raw.githubusercontent.com:443] can be kept alive indefinitely
+22:17:01.955 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+22:17:01.956 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://raw.githubusercontent.com:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+22:17:01.956 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 75.0.3770.90 (since Google Chrome 75 is installed in your machine)
+22:17:01.977 [main] DEBUG io.github.bonigarcia.wdm.Preferences - Storing preference chrome75=75.0.3770.90 (valid until 2019-06-16 23:17:01)
+22:17:01.980 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager - Driver chromedriver 75.0.3770.90 found in cache
+22:17:01.982 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/pavlo/.m2/repository/webdriver/chromedriver/linux64/75.0.3770.90/chromedriver
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+2019-06-16 22:17:02.685  INFO 3814 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v2.22.1 on pavlo-VirtualBox with PID 3814 (started by pavlo in /home/pavlo/.jenkins/workspace/prueba2)
+2019-06-16 22:17:02.690  INFO 3814 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : No active profile set, falling back to default profiles: default
+2019-06-16 22:17:02.805  INFO 3814 --- [           main] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-16 22:17:04.905  INFO 3814 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-16 22:17:04.955  INFO 3814 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-16 22:17:04.956  INFO 3814 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-06-16 22:17:04.972  INFO 3814 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-06-16 22:17:05.155  INFO 3814 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-16 22:17:05.156  INFO 3814 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2351 ms
+2019-06-16 22:17:05.606  INFO 3814 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-16 22:17:05.775  WARN 3814 --- [           main] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2019-06-16 22:17:05.810  INFO 3814 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-06-16 22:17:06.039  INFO 3814 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-16 22:17:06.046  INFO 3814 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 3.934 seconds (JVM running for 6.471)
+Starting ChromeDriver 75.0.3770.90 (a6dcaf7e3ec6f70a194cc25e8149475c6590e025-refs/branch-heads/3770@{#1003}) on port 14611
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+2019-06-16 22:17:08.641  INFO 3814 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Starting ChromeDriver 75.0.3770.90 (a6dcaf7e3ec6f70a194cc25e8149475c6590e025-refs/branch-heads/3770@{#1003}) on port 1835
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+2019-06-16 22:17:10.132  INFO 3814 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2019-06-16 22:17:10.502  INFO 3814 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-16 22:17:10.503  INFO 3814 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-16 22:17:10.543  INFO 3814 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 39 ms
+Received message '{"action":"JOIN_GAME","data":{"name":"josep"}}' from client 7e5e94d3-1643-bb3d-f52d-806f19620c3d
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1}]}' to client 7e5e94d3-1643-bb3d-f52d-806f19620c3d
+Received message '{"action":"JOIN_GAME","data":{"name":"Mary"}}' from client 0a4c4ca6-4c7a-bc77-f53e-3711f31a0802
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1},{"label":"O","name":"Mary","id":2}]}' to client 7e5e94d3-1643-bb3d-f52d-806f19620c3d
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1},{"label":"O","name":"Mary","id":2}]}' to client 0a4c4ca6-4c7a-bc77-f53e-3711f31a0802
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client 7e5e94d3-1643-bb3d-f52d-806f19620c3d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client 0a4c4ca6-4c7a-bc77-f53e-3711f31a0802
+Sent message '{"action":"RECONNECT","data":null}' to client 0a4c4ca6-4c7a-bc77-f53e-3711f31a0802
+Starting ChromeDriver 75.0.3770.90 (a6dcaf7e3ec6f70a194cc25e8149475c6590e025-refs/branch-heads/3770@{#1003}) on port 32295
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+2019-06-16 22:17:14.609  INFO 3814 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Starting ChromeDriver 75.0.3770.90 (a6dcaf7e3ec6f70a194cc25e8149475c6590e025-refs/branch-heads/3770@{#1003}) on port 9889
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+2019-06-16 22:17:15.893  INFO 3814 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Received message '{"action":"JOIN_GAME","data":{"name":"josep"}}' from client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1}]}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Received message '{"action":"JOIN_GAME","data":{"name":"Mary"}}' from client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1},{"label":"O","name":"Mary","id":2}]}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1},{"label":"O","name":"Mary","id":2}]}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"josep","id":1}}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"josep","id":1}}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":8}}' from client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Mary","id":2}}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Mary","id":2}}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"josep","id":1}}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"josep","id":1}}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":6}}' from client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Mary","id":2}}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Mary","id":2}}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"josep","id":1}}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"josep","id":1}}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"josep","id":1},"pos":[0,1,2]}}' to client 89316986-372f-5845-00a5-921ca0d26d97
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"josep","id":1},"pos":[0,1,2]}}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Sent message '{"action":"RECONNECT","data":null}' to client c6009d5d-0e21-8d4d-2236-39de9fcbc101
+Starting ChromeDriver 75.0.3770.90 (a6dcaf7e3ec6f70a194cc25e8149475c6590e025-refs/branch-heads/3770@{#1003}) on port 13981
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+2019-06-16 22:17:20.415  INFO 3814 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Starting ChromeDriver 75.0.3770.90 (a6dcaf7e3ec6f70a194cc25e8149475c6590e025-refs/branch-heads/3770@{#1003}) on port 11311
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+2019-06-16 22:17:21.206  INFO 3814 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Received message '{"action":"JOIN_GAME","data":{"name":"josep"}}' from client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1}]}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Received message '{"action":"JOIN_GAME","data":{"name":"Mary"}}' from client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1},{"label":"O","name":"Mary","id":2}]}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1},{"label":"O","name":"Mary","id":2}]}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"josep","id":1}}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"josep","id":1}}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Mary","id":2}}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Mary","id":2}}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"josep","id":1}}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"josep","id":1}}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Mary","id":2}}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Mary","id":2}}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"josep","id":1}}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"josep","id":1}}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Mary","id":2}}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Mary","id":2}}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Mary","id":2},"pos":[0,1,2]}}' to client bb817159-df5e-d4ad-3d37-7fb67b2ca598
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Mary","id":2},"pos":[0,1,2]}}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Sent message '{"action":"RECONNECT","data":null}' to client f0ca6b4e-8d1a-e31e-29ad-d9fa52c24b8a
+Starting ChromeDriver 75.0.3770.90 (a6dcaf7e3ec6f70a194cc25e8149475c6590e025-refs/branch-heads/3770@{#1003}) on port 27401
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+2019-06-16 22:17:25.195  INFO 3814 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Starting ChromeDriver 75.0.3770.90 (a6dcaf7e3ec6f70a194cc25e8149475c6590e025-refs/branch-heads/3770@{#1003}) on port 10374
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+2019-06-16 22:17:26.048  INFO 3814 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Received message '{"action":"JOIN_GAME","data":{"name":"josep"}}' from client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1}]}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Received message '{"action":"JOIN_GAME","data":{"name":"Mary"}}' from client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1},{"label":"O","name":"Mary","id":2}]}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"josep","id":1},{"label":"O","name":"Mary","id":2}]}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"josep","id":1}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"josep","id":1}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Mary","id":2}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Mary","id":2}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"josep","id":1}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"josep","id":1}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Mary","id":2}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Mary","id":2}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"josep","id":1}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"josep","id":1}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Mary","id":2}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Mary","id":2}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"josep","id":1}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"josep","id":1}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Mary","id":2}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Mary","id":2}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Mary","id":2}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"josep","id":1}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"josep","id":1}}}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"josep","id":1}}}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"GAME_OVER","data":null}' to client bab1b479-4b11-3706-d2ed-b2e314ab1318
+Sent message '{"action":"GAME_OVER","data":null}' to client e040563a-7367-0925-82b1-c2ba76c73754
+Sent message '{"action":"RECONNECT","data":null}' to client e040563a-7367-0925-82b1-c2ba76c73754
+2019-06-16 22:17:28.845  INFO 3814 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 28.435 s - in es.codeurjc.ais.tictactoe.SistemaTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.1:jar (default-jar) @ p.lopezpar ---
+[INFO] Building jar: /home/pavlo/.jenkins/workspace/prueba2/target/p.lopezpar-0.0.1-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  36.093 s
+[INFO] Finished at: 2019-06-16T22:17:29+02:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Results)
+[Pipeline] junit
+Recording test results
+[Pipeline] archive
+The archive step is deprecated, please use archiveArtifacts instead.
+No files found to archive for pattern "target/*.log"; continuing.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+
